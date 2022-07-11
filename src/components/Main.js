@@ -28,15 +28,13 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
 	return (
 		<>
 <section className="profile">
-		<a 
-			className="profile__avatar" 
+<a className="profile__avatar-container" 
 			href="##" alt="аватар" 
 			onClick={onEditAvatar}
-			style={{ backgroundImage: `url(${userAvatar})` }}
 			>
-			
-			
+			<img class="profile__avatar" src={userAvatar} alt="аватар"/>
 		</a>
+		
 		<div className="profile__info">
 			<h1 className="profile__title" name="name">{userName}</h1>
 			<button 

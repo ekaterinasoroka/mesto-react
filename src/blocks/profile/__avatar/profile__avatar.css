@@ -1,29 +1,8 @@
 .profile__avatar {
-  height: 120px;
-  width: 120px;
+	max-width: 120px;
+	height: 120px;
 	box-sizing: border-box;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.profile__avatar::before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: background-color 1s ease-out;
-}
-
-.profile__avatar:hover::before {
-  background-image: url(../../../images/pensil.svg);
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 0;
+	border-radius: 50%;
+	cursor: pointer;
+	object-fit: cover;
 }
