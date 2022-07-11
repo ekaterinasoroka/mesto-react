@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import api from '../utils/Api.js';
+import api from '../utils/api.js';
 import Card from './Card.js';
-import './index.css';
 
 function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
 	const [userName, setUserName] = useState('');
@@ -24,52 +23,46 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
 		getApiStartPage()
 	}, []);
 
-
 	return (
 		<>
-<section className="profile">
-<a className="profile__avatar-container" 
-			href="##" alt="аватар" 
-			onClick={onEditAvatar}
-			>
-			<img class="profile__avatar" src={userAvatar} alt="аватар"/>
-		</a>
-		
-		<div className="profile__info">
-			<h1 className="profile__title" name="name">{userName}</h1>
-			<button 
-				className="profile__edit-button" 
-				type="button" 
-				onClick={onEditProfile}
-				>
+			<section className="profile">
+				<a className="profile__avatar-container" 
+							href="##" alt="аватар" 
+							onClick={onEditAvatar}
+							>
+							<img className="profile__avatar" src={userAvatar} alt="аватар"/>
+				</a>
+					
+				<div className="profile__info">
+					<h1 className="profile__title" name="name">{userName}</h1>
+					<button 
+						className="profile__edit-button" 
+						type="button" 
+						onClick={onEditProfile}
+					>
+					</button>
+					<p 
+						className="profile__subtitle" 
+						name="about">
+							{userDescription}
+					</p>
+				</div>
+				<button className="profile__add-button" type="button" onClick={onAddPlace}></button>
+			</section>
 
-				</button>
-			<p 
-				className="profile__subtitle" 
-				name="about">
-					{userDescription}
-			</p>
-		</div>
-		<button className="profile__add-button" type="button" onClick={onAddPlace}></button>
-	</section>
-
-	<div className="elements">
-		{cards.map((item) => {
-			return (
-				<Card
-					key={item._id}
-					card={item}
-					onCardClick={onCardClick}
-				/>
-			)
-		})}
-	</div>
-</>
-
+			<div className="elements">
+				{cards.map((item) => {
+					return (
+						<Card
+							key={item._id}
+							card={item}
+							onCardClick={onCardClick}
+						/>
+					)
+				})}
+			</div>
+		</>
 	)
-
-
-
 }
 
 export default Main;

@@ -1,14 +1,8 @@
-
-import './index.css';
-
 function Footer() {
-  return (
-    
-	<footer className="footer">
-		<p className="footer__logo">&copy; 2020 Mesto Russia</p>
-	</footer>
-
-	
+  return (    
+		<footer className="footer">
+			<p className="footer__logo">&copy; 2020 Mesto Russia</p>
+		</footer>	
   );
 }
 
