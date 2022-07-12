@@ -13,24 +13,29 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
 			.then(([userInfo, card]) => {
 				setUserName(userInfo.name);
 				setUserDescription(userInfo.about);
-				setUserAvatar(userInfo.avatar)
-				setCards(card)
+				setUserAvatar(userInfo.avatar);
+				setCards(card);
 			})
-			.catch((err) => console.log(err))
+			.catch((err) => console.log(err));
 	}
 
 	useEffect(() => {
-		getApiStartPage()
+		getApiStartPage();
 	}, []);
 
 	return (
 		<>
 			<section className="profile">
-				<a className="profile__avatar-container" 
-							href="##" alt="аватар" 
-							onClick={onEditAvatar}
-							>
-							<img className="profile__avatar" src={userAvatar} alt="аватар"/>
+				<a 
+					className="profile__avatar-container" 
+					href="##" alt="аватар" 
+					onClick={onEditAvatar}
+				>
+					<img 
+						className="profile__avatar" 
+						src={userAvatar} 
+						alt="аватар"
+					/>
 				</a>
 					
 				<div className="profile__info">
