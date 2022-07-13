@@ -1,4 +1,4 @@
-class api {
+class Api {
   constructor(url, cardId) {
     this._url = url;
     this._cardId = cardId;
@@ -82,4 +82,6 @@ class api {
   }
 }
 
-export default new api('https://mesto.nomoreparties.co/v1/cohort-43'); 
+ const api = new Api('https://mesto.nomoreparties.co/v1/cohort-43'); 
+
+ export default api;
