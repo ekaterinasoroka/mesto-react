@@ -1,7 +1,6 @@
 class Api {
-  constructor(url, cardId) {
+  constructor(url) {
     this._url = url;
-    this._cardId = cardId;
     this._headers = {
       'Content-Type': 'application/json',
       authorization: 'ccde9c8b-0b7e-4a31-936e-1b52e9675d33'
@@ -43,40 +42,33 @@ class Api {
     return fetch(`${this._url}/cards`, {
       headers: this._headers,
       method: 'POST',
-      body: JSON.stringify({name: item.cardname, link: item.link})
+      body: JSON.stringify({name: item.name, link: item.link})
     })
     .then(this._checkingTheResponse);
   }
 
-  deleteCard(data) {
-    return fetch(`${this._url}/cards/${data._cardId}`, {
+  toggleLike(data, isLiked) {
+    return fetch(`${this._url}/cards/${data}/likes`, {
       headers: this._headers,
-      method: 'DELETE',
-    })
-    .then(this._checkingTheResponse);
-  }
-
-  putLike(data) {
-    return fetch(`${this._url}/cards/${data._cardId}/likes`, {
-      headers: this._headers,
-      method: 'PUT'
+      method: `${isLiked ? 'DELETE' : 'PUT'}`
     })
       .then(this._checkingTheResponse); 
-  }
-
-  deleteLike(data) {
-    return fetch(`${this._url}/cards/${data._cardId}/likes`, {
-      headers: this._headers,
-      method: 'DELETE'
-    })
-    .then(this._checkingTheResponse);
   }
 
   updateAvatarUser(item) {
     return fetch(`${this._url}/users/me/avatar`, {
       headers: this._headers,
       method: 'PATCH',
-      body: JSON.stringify({avatar: item.link})
+      body: JSON.stringify({avatar: item.avatar})
+    })
+    .then(this._checkingTheResponse);
+  }
+
+  
+  deleteCard(data) {
+    return fetch(`${this._url}/cards/${data}`, {
+      headers: this._headers,
+      method: 'DELETE',
     })
     .then(this._checkingTheResponse);
   }

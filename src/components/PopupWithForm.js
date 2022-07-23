@@ -5,7 +5,7 @@ function PopupWithForm(props) {
     >
       <div className="popup__container">
         <button className="popup__close" type="button" onClick={props.onClose}></button>
-        <form className={`form form_popup_${props.name}`} noValidate>
+        <form className={`form form_popup_${props.name}`} onSubmit={props.onSubmit} noValidate>
           <h3 className="form__title" >{props.title}</h3>
           {props.children}
           <button className="form__save" type="submit"></button>
