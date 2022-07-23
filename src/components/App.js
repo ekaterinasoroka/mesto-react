@@ -80,16 +80,20 @@ function App() {
     api.toggleLike(card._id, isLiked)
 		.then((newCard) => {
 			setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
-    });
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 	}
 
 	function handleCardDelete(card) {
     api.deleteCard(card._id)
-      .then(() => {
-        setCards((state) => state.filter((d) => (d._id !== card._id)));
-      })
-      .catch((err) => console.log(err));
+    .then(() => {
+      setCards((state) => state.filter((d) => (d._id !== card._id)));
+    })
+    .catch((err) => console.log(err));
   }
+
   function handleAddPlaceSubmit(card) {
     api.addNewCard(card)
     .then((newCard) => {

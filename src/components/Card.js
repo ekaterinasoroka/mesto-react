@@ -12,12 +12,15 @@ function Card(props) {
   function handleClick() {
     props.onCardClick(props.card);
   }
+
   function handleLikeClick() {
     props.onCardLike(props.card)
   }
+
   function handleDeleteClick() {
     props.onCardDelete(props.card)
   }
+  
   return (
     <div className="element">
       <img 
