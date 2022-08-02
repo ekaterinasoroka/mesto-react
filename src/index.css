@@ -59,4 +59,10 @@
 @import url(./blocks/form/_popup/form_popup_edit.css);
 @import url(./blocks/form/_popup/form_popup_avatar.css);
 @import url(./blocks/form/_popup/form_popup_delete-card.css);
+@import url(./blocks/identification/identification.css);
+@import url(./blocks/identification/__form/identification__form.css);
+@import url(./blocks/identification/__login-link/identification__login-link.css);
+@import url(./blocks/identification/__sign/identification__sign.css);
+@import url(./blocks/identification/__subButton/identification__subButton.css);
+@import url(./blocks/identification/__welcome/identification__welcome.css);
 @import url(./blocks/form/__error/_visible/form__error_visible.css);
